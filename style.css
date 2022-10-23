@@ -1,0 +1,149 @@
+@import url(https://fonts.googleapis.com/css?family=Teko);
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+*,
+:after,
+:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Teko", sans-serif;
+}
+
+body {
+  background-color: rgb(20, 20, 20);
+  height: 100vh;
+  width: 100vw;
+}
+
+body:before {
+  content: "";
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://www.jobenetuk.dev/grid.8be72af1.svg);
+  position: fixed;
+  inset: 0 6rem;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+body:after {
+  content: "";
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://grainy-gradients.vercel.app/noise.svg);
+  background-repeat: repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+#pageWrap {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
+#cursorTrail {
+  height: 400px;
+  width: 400px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-event: none;
+  z-index: -1;
+}
+
+#cursorTrail .trail {
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  border-radius: 38% 62% 49% 51% / 40% 33% 67% 60%;
+  filter: blur(4rem);
+}
+
+#trail1 {
+  top: 50px;
+  left: -50px;
+}
+
+#trail2 {
+  top: -50px;
+  left: 50px;
+}
+
+#trail3 {
+  top: 50px;
+  left: 50px;
+  transition: background 4s ease-out;
+}
+
+#content {
+  color: white;
+}
+
+#content h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: x-large;
+  transform: translatex(-1rem) translatey(-1rem);
+  color: #ff873c;
+  letter-spacing: -1px;
+}
+
+#content h2 {
+  text-align: center;
+  font-size: 18rem;
+  line-height: 15rem;
+  letter-spacing: -2px;
+}
+
+@media only screen and (max-width: 1500px) {
+  #content h1 {
+    font-size: large;
+  }
+  #content h2 {
+    font-size: 10rem;
+    line-height: 8rem;
+  }
+
+  #cursorTrail,
+  #cursorTrail .trail {
+    height: 300px;
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #content h1 {
+    font-size: medium;
+  }
+  #content h2 {
+    font-size: 6rem;
+    line-height: 5rem;
+  }
+  #cursorTrail,
+  #cursorTrail .trail {
+    height: 200px;
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #content h1 {
+    font-size: small;
+  }
+  #content h2 {
+    font-size: 3rem;
+    line-height: 2.3rem;
+    letter-spacing: 0;
+  }
+  #cursorTrail,
+  #cursorTrail .trail {
+    height: 150px;
+    width: 150px;
+  }
+}
